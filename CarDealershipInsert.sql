@@ -2,7 +2,7 @@ INSERT INTO car(
     car_id,
     car_make,
     car_model,
-    car_year,
+    car_year
 )VALUES(
     1,
     'Honda',
@@ -24,6 +24,7 @@ INSERT INTO customer(
     'David',
     'Rincon'
 ),(
+    2,
     'Eric',
     'Rincon'
 )
@@ -65,7 +66,7 @@ INSERT INTO service(
     car_id
 )VALUES(
     1,
-    'Rotated the tires.'
+    'Rotated the tires.',
     2
 ),(
     2,
@@ -79,7 +80,7 @@ INSERT INTO mechanic(
     last_name
 )VALUES(
     1,
-    "Robert",
+    'Robert',
     'Remington'
 ),(
     2,
@@ -103,9 +104,9 @@ INSERT INTO service_mechanic(
 
 CREATE OR REPLACE FUNCTION add_car(
     _car_id INTEGER,
-    _car_make VARCHAR,
-    _car_model VARCHAR,
-    _car_year VARCHAR)
+    _car_make VARCHAR(45),
+    _car_model VARCHAR(45),
+    _car_year VARCHAR(45))
 RETURNS void
 AS $MAIN$
 BEGIN
@@ -113,9 +114,10 @@ BEGIN
     VALUES(_car_id, _car_make, _car_model, _car_year)
 END;
 $MAIN$
-LANGUAGE plpgsql
+LANGUAGE plpgsql;
 
 SELECT add_car(3, 'Tesla', 'Roadster', '2023')
 SELECT add_car(4, 'Tesla', 'Moon Rover', '2025')
 
--- watch the stored function section of class
+
+-- test my project on a live db

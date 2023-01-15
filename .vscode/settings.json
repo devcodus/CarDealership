@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "PostgreSQL",
+            "name": "CDP_DB",
+            "connectString": "postgres://sieyfcna:znzyje0FMqsLZIIeD9YbbIv6GqrKxKo1@isilo.db.elephantsql.com/sieyfcna"
+        }
+    ]
+}
